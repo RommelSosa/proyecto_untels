@@ -38,6 +38,15 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     //Ruta para exportar el excel con la lista de los egresados
     Route::get('/admin/egresado/Exportexcel', [App\Http\Controllers\ReporteAdminController::class, 'exportExcel'])->name('egresados.Export-excel');
 
+    //Ruta para exportar el excel con la lista de los egresados de trayectoria academica maestria
+    Route::get('/admin/egresado/Exportexcel1', [App\Http\Controllers\ReporteAdminController::class, 'exportExcelAcademicoMaestria'])->name('egresados.Export-excel-Academico-Maestria');
+
+    //Ruta para exportar el excel con la lista de los egresados de trayectoria academica doctorado
+    /* Route::get('/admin/egresado/Exportexcel2', [App\Http\Controllers\ReporteAdminController::class, 'exportExcelAcademicoDoctorado'])->name('egresados.Export-excel-Academico-Doctorado'); */
+
+    //Ruta para exportar el excel con la lista de los egresados de trayectoria profesional
+    Route::get('/admin/egresado/Exportexcel3', [App\Http\Controllers\ReporteAdminController::class, 'exportExcelProfesional'])->name('egresados.Export-excel-Profesional');
+
     //Ruta para exportar el pdf con la lista de los egresados
     Route::get('/admin/egresado/pdf/{string}', [App\Http\Controllers\ReporteAdminController::class, 'showReporteEgresados'])->name('imprimir');
 

@@ -7,6 +7,11 @@ use App\Models\Egresado;
 use PDF;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\EgresadosExport;
+use App\Exports\TrayectoriaAcademicaDoctoradoExport;
+use App\Exports\TrayectoriaAcademicaExport;
+use App\Exports\TrayectoriaAcademicaMaestriaExport;
+use App\Exports\TrayectoriaProfesionalExport;
+use App\Exports\UsersExport1;
 use App\Imports\EgresadosImport;
 use App\Imports\ImportUser;
 use Barryvdh\DomPDF\PDF as DomPDFPDF;
@@ -50,10 +55,17 @@ class ReporteAdminController extends Controller
 
     //Exportar los datos del excel
     public function exportExcel(){
-
         return Excel::download(new EgresadosExport,'egresados-list.xlsx');
-
     }
+    public function exportExcelAcademicoMaestria(){
+         return Excel::download(new TrayectoriaAcademicaMaestriaExport,'trayectoria-académica.xlsx');
+     }
+     /* public function exportExcelAcademicoDoctorado(){
+        return Excel::download(new TrayectoriaAcademicaDoctoradoExport,'trayectoria-académica-doctorado.xlsx');
+    } */
+     public function exportExcelProfesional(){
+         return Excel::download(new TrayectoriaProfesionalExport,'trayectoria-profesional.xlsx');
+     }
 
     //Retorna hacia la vista para importar el excel
     public function VistaimportExcel(){

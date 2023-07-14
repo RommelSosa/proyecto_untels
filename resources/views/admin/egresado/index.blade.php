@@ -110,14 +110,22 @@
                             <a href="{{ route('imprimir', $valor2)}}"  target="_blank" class="btn btn-danger" ><i class="fas fa-file-pdf"></i></a>
                         </div>
 
-                        <div class="col-auto my-1" >
-                            <a href="{{ route('egresados.Export-excel')}}"  target="_blank" class="btn btn-success" ><i class="fas fa-file-export"></i></a>
-                        </div>
-
                         <div class="col-auto my-1">
                             <a href="{{ route('egresados.Import-excel')}}" class="btn btn-warning" ><i class="fas fa-upload"></i></a>
                         </div>
 
+                        <div class="col-auto my-1" >
+                            <a href="{{ route('egresados.Export-excel')}}"  target="_blank" class="btn btn-success" title="Datos personales"><i class="fas fa-file-export"></i></a>
+                        </div>
+                        <div class="col-auto my-1" >
+                            <a href="{{ route('egresados.Export-excel-Academico-Maestria')}}"  target="_blank" class="btn btn-success" title="Trayectoria académica"><i class="fas fa-file-export"></i></a>
+                        </div>
+                        {{-- <div class="col-auto my-1" >
+                            <a href="{{ route('egresados.Export-excel-Academico-Doctorado')}}"  target="_blank" class="btn btn-success" title="Trayectoria académica doctorado"><i class="fas fa-file-export"></i></a>
+                        </div> --}}
+                        <div class="col-auto my-1" >
+                            <a href="{{ route('egresados.Export-excel-Profesional')}}"  target="_blank" class="btn btn-success" title="Trayectoria profesional"><i class="fas fa-file-export"></i></a>
+                        </div>
                     </div>
                 </div>
 
